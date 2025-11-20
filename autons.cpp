@@ -21,20 +21,20 @@ void autonomous() {
         intake_top.move_velocity(-400);
         intake_bottom.move_velocity(-400);
         pros::delay(1750);
-        intake_top.move_velocity(0);
+        intake_top.move_velocity (0);
         intake_bottom.move_velocity(0);
-        translate(66,260,2000);
+        translate(66,260,1700);
         pros::delay(400);
         ballblock.set_value(false);
-        setHeading(0,220,1000);
+        setHeading(0,212,1000);
         scraper1.set_value(true);
         scraper2.set_value(true);
-        translate(-5,215,500);
+        translate(-5,212,500);
         pros::delay(100);//maybe not
         intake_bottom.move_velocity(-600);
-        translate(20,215,750);
+        translate(20,212,750);
         pros::delay(1000);
-        translate(-35,205,750);
+        translate(-38,212,750);
         intake_top.move_velocity(-600);
             break;
 }
