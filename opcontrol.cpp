@@ -39,10 +39,12 @@ void opcontrol() {
       intake_top.move_velocity(0);
     } else if (master.get_digital(pros::E_CONTROLLER_DIGITAL_L2)) {
       intake_bottom.move_velocity(-600);
-      intake_top.set_brake_mode(MotorBrake::hold);
+      intake_top.move_velocity(-600);
+      ballblock.set_value(true);
     } else {
       intake_bottom.move_velocity(0);
       intake_top.move_velocity(0);
+      ballblock.set_value(false);
     }
 
     // scraper
@@ -63,14 +65,14 @@ void opcontrol() {
       scraper1.set_value(false);
       scraper2.set_value(false);
     }
-     if (master.get_digital(pros::E_CONTROLLER_DIGITAL_UP)) {
-      ballblock.set_value(false);
+    //  if (master.get_digital(pros::E_CONTROLLER_DIGITAL_L2)) {
+    //   ballblock.set_value(false);
       
-    }
-    if (master.get_digital(pros::E_CONTROLLER_DIGITAL_DOWN)) {
-      ballblock.set_value(true);
+    // }
+    // if (master.get_digital(pros::E_CONTROLLER_DIGITAL_DOWN)) {
+    //   ballblock.set_value(true);
       
-    }
+    // }
     // delay
     pros::delay(10);
   }
